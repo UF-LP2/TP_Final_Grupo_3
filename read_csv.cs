@@ -18,7 +18,7 @@ namespace csvfiles {
 
                     Pedido record = new Pedido {
                         producto = csv.GetField<string>("producto"),
-                        precio = csv.GetField<float>("precio"),
+                       // precio = csv.GetField<float>("precio"),
                         ancho = csv.GetField<float>("ancho"),
                         largo = csv.GetField<float>("largo"),
                         alto = csv.GetField<float>("alto"),
@@ -39,7 +39,7 @@ namespace csvfiles {
 // Puede ser editada en base a su TP
 public class Pedido {
     public string? producto { get; set; }
-    public float precio { get; set; }
+   // public float precio { get; set; }
     public float largo { get; set; }
     public float ancho { get; set; }
     public float alto { get; set; }
