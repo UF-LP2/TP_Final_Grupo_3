@@ -30,12 +30,7 @@ namespace tp_final
         private cProducto.cListaProducto ProductosAEntregar;
 
 
-
-
-
         //TODO deberiamos imprimir que compre uno nuevo pasados los 4 años, no se --> lo dice en la consigna ?? es lo de 25% ?? sep 
-
-
 
 
         #region Constructores y Destructores
@@ -163,10 +158,12 @@ namespace tp_final
 
         }
 
+
+        //TODO: revisar que entregue a la vez todo lo del mismo cliente
         /// <summary>
         /// Llama a  BuscarCamino, y realiza la entrega de los productos a los clientes, contando lo consumido en cada entrega
         /// </summary>
-        public void RealizarReparto(List<cCliente> ClienteAEntregar, cZona.cListaZonas Mapa)
+        public void RealizarReparto(List<cCliente> ClientesAEntregar, cZona.cListaZonas Mapa)
         {
 
             BuscarCamino(Mapa); //ordena la lista de productos en orden de entrega y busca el camino
@@ -175,7 +172,7 @@ namespace tp_final
 
             for (int i = 0; i < tam; i++)
             {
-                Entregar(ProductosAEntregar[i], ClienteAEntregar);
+                Entregar(ProductosAEntregar[i], ClientesAEntregar);
             }
         }
 
@@ -208,7 +205,6 @@ namespace tp_final
 
             eZona zona_actual = eZona.Liniers;
 
-            cZona Salida = Mapa.GetProduct(zona_actual);
 
             while (j < ProductosAEntregar.GetCount())
             {
@@ -216,7 +212,7 @@ namespace tp_final
                 List<eZona> ZonasAux = new List<eZona>();
 
                 // TODO Devuelve por izquierda el camino que tuvo que realizar al destino final, y por derecha la zona que era más cercana, le padaría la zona salida y devolvería zona actual orq sino dentro de la funcion no sabes de donde tenes q buscar 
-                ZonasAux = BuscarCaminoCercano(ref zona_actual, Salida, ZonasARecorrer, Mapa); 
+                ZonasAux = BuscarCaminoCercano(ref zona_actual, ZonasARecorrer, Mapa);
 
                 foreach (eZona zona in ZonasAux)
                 {
@@ -243,47 +239,85 @@ namespace tp_final
 
         }
 
-        public List<int> Distancia(List<eZona> adyacentes, cZona Zona)
+
+
+        public List<float> Distancia(List<eZona> adyacentes, cZona Zona)
         {
-            List<int> Distancia = new List<int>();
-            for (int i = 0; i < Zona.GetAdyacentes().Count(); i++)
+            List<float> Distancia = new List<float>();
+
+            for (int i = 0; i < Zona.ListaAdyacentes.Count; i++)
             {
-                for (int j = 0; j < adyacentes.Count(); j++)
+                for (int j = 0; j < adyacentes.Count; j++)
                 {
-                    if (Zona.GetAdyacentes()[i].Zona == adyacentes[j])
+                    if (Zona.Adyacente(i).Zona == adyacentes[j])
                     {
-                        Distancia.Add(Zona.GetDistancias()[j]); //copia a la lista los nombres de las zonas adyacentes de entre donde vas a salir y el resto del recorrido
+                        Distancia.Add(Zona.AdyDistancia(j)); //copia a la lista los nombres de las zonas adyacentes de entre donde vas a salir y el resto del recorrido
 
                     }
                 }
             }
             return Distancia;
         }
-        public List<eZona> BuscarCaminoCercano(ref eZona zona_actual, cZona zona_salida, List<eZona> ZonasARecorrer, cZona.cListaZonas Mapa)
+
+        public List<eZona> BuscarCaminoCercano(ref eZona zona_actual, List<eZona> ZonasARecorrer, cZona.cListaZonas Mapa)
         {
-            //TODO en el medio se  me apago la tele pero al menos hay como una idea 
             List<eZona> Camino = new List<eZona>();
+
+            eZona zona_anterior = zona_actual;
+
+
+            
+            return Camino;
+        }
+
+
+        public List<eZona> Dijkstra(ref float costo, eZona origen, eZona destino, cZona.cListaZonas Mapa)
+        {
+            List<eZona> Camino = new List<eZona>();
+
+            // Si es desde Liniers, lo agrego al principio del camino,
+            // si no, ya está como final del camino anterior
+
+            // Ver el articulo que nos mostro sol (nombre arriba de todo en czona)
+
+
+            // Si alguno de los adyacentes es el destino, lo agrego al camino, cuento su costo y lo retorno
+
+            // Si ninguno de los adyacentes es el destino, me muevo al adyacente más cercano, lo agrego al camino, y lo vuelvo a buscar
+
+
+            for (int i = 0; i < Mapa[(int)origen].ListaAdyacentes.Count; i++)
+            {
+
+
+            }
+
+
+            /*List<eZona> Camino = new List<eZona>();
             Camino.Add(zona_actual);
             List<eZona> adyacentes = new List<eZona>();
-            List<int> distancias = new List<int>();
-            for(int i=0; i<zona_salida.GetAdyacentes().Count(); i++)
+            List<float> distancias = new List<float>();
+
+            
+            for(int i=0; i < Mapa[(int)zona_anterior].GetAdyacentes().Count; i++)
             {
                 for(int j=0;j<ZonasARecorrer.Count();j++)
                 {
-                    if (zona_salida.GetAdyacentes()[i].Zona == ZonasARecorrer[j])
+                    if (zona_anterior.GetAdyacentes()[i].Zona == ZonasARecorrer[j])
                     {
                         adyacentes.Add(ZonasARecorrer[j]); //copia a la lista los nombres de las zonas adyacentes de entre donde vas a salir y el resto del recorrido
                        
                     }
                 }
             }
+
             distancias = Distancia(adyacentes, zona_salida);
+
             int MinDistPos = 0;
             if(!adyacentes.Any())
             {
                 for(int k=0; k<adyacentes.Count(); k++)
                 {
-                    MinDistPos = k;
                     if (distancias[k] > MinDistPos)
                         MinDistPos = k;
                     
@@ -301,11 +335,11 @@ namespace tp_final
            
 
             //TODO por adyacencias 
-           
+           */
 
             return Camino;
-        }
 
+        }
 
 
         /// <summary>

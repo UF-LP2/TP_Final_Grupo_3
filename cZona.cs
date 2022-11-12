@@ -18,7 +18,7 @@ namespace tp_final
     {
         private eZona Nombre; 
         List<cZona> Adyacentes;
-        List<int> Distancias; 
+        List<float> Distancias; 
 
 
         #region Constructor y destructor
@@ -26,7 +26,7 @@ namespace tp_final
         {
             this.Nombre = Nombre_;
             this.Adyacentes = new List<cZona>();
-            this.Distancias = new List<int>();
+            this.Distancias = new List<float>();
         }
 
         ~cZona()
@@ -42,18 +42,21 @@ namespace tp_final
             this.Adyacentes.AddRange(Adyacentes); //Agrega toda la lista al final de esta, si tiene algo mas lo mantiene
         } 
 
-        public void AddDistancias(List<int> Distancias) 
+        public void AddDistancias(List<float> Distancias) 
         {
             this.Distancias.AddRange(Distancias);
-        } 
-
-        public List<cZona> GetAdyacentes()
-        {
-            return this.Adyacentes;
         }
-        public List<int> GetDistancias()
+
+        public cZona Adyacente(int value) { return Adyacentes[value]; }
+        public float AdyDistancia(int value) { return Distancias[value]; }
+
+        public List<cZona> ListaAdyacentes
         {
-            return this.Distancias;
+            get{ return this.Adyacentes; }
+        }
+        public List<float> ListaDistancias
+        {
+            get { return this.Distancias; }
         }
 
         public class cListaZonas 
@@ -72,14 +75,15 @@ namespace tp_final
             #region Getters
             public int GetCount() { return Lista.Count; }
 
-            public cZona GetProduct(int pos) //TODO porq se llama product?
+            public cZona GetZona(int pos)
             { 
 
                 if (!Lista.Any() && pos <= Lista.Count()) // Si la lista tiene algo y la posición está dentro de los posibles productos
                     return Lista[pos];
                 throw new Exception("No se encuentra"); //no te lo esperabas 
             }
-            public cZona GetProduct(eZona nombre) //TODO porq se llama product?
+
+            public cZona GetZona(eZona nombre)
             {
 
                 if (!Lista.Any()) // Si la lista tiene algo y la posición está dentro de los posibles productos
@@ -95,18 +99,19 @@ namespace tp_final
                 throw new Exception("No se encuentra"); //no te lo esperabas 
             }
 
-            public void SetProduct(int pos, cZona nuevo)
+            public void SetZona(int pos, cZona nuevo)
             {
                 if (nuevo != null && !Lista.Any() && pos <= Lista.Count())
                 {
                     Lista[pos] = nuevo;
                 }
             }
+
             // Sobrecarga de [ ] para que devuelva un elemento especifico de la lista
             public cZona this[int pos]
             {
-                get => GetProduct(pos);
-                set => SetProduct(pos, value);
+                get => GetZona(pos);
+                set => SetZona(pos, value);
 
             }
             #endregion Getters
