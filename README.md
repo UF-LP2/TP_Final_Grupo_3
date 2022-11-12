@@ -1,11 +1,11 @@
-# TP Final - Grupo `XX`
+# TP Final - Grupo `03`
 ### Consigna
     Consigna del TP Final
 ### Descripción
     Descripción del proyecto
 ### Integrantes
-- Integrante 1
-- Integrante 2
+- Fernández Lara
+- Plácido Trinidad Nieves
 ---
 ##### Universidad Favaloro - Laboratorio de Programación II
 ##### 2do Cuatrimestre - 2022
