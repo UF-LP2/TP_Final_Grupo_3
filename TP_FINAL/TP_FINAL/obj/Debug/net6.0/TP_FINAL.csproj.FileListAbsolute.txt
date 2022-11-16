@@ -1,0 +1,15 @@
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.csproj.AssemblyReference.cache
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.AssemblyInfoInputs.cache
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.AssemblyInfo.cs
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.csproj.CoreCompileInputs.cache
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\bin\Debug\net6.0\TP_FINAL.exe
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\bin\Debug\net6.0\TP_FINAL.deps.json
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\bin\Debug\net6.0\TP_FINAL.runtimeconfig.json
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\bin\Debug\net6.0\TP_FINAL.dll
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\bin\Debug\net6.0\TP_FINAL.pdb
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.dll
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\refint\TP_FINAL.dll
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.pdb
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\TP_FINAL.genruntimeconfig.cache
+C:\LARA (saved)\Universidad\2° año\2° cuatrimestre\Laboratorio de Programación II\TP-LPII\TP_FINAL\TP_FINAL\obj\Debug\net6.0\ref\TP_FINAL.dll
